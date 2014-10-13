@@ -2,6 +2,6 @@
 <resources>
 
     <string name="hello">Hello World, BallonGameActivity!</string>
-    <string name="app_name">BallonGame</string>
+    <string name="app_name">BallonBoom</string>
 
 </resources>

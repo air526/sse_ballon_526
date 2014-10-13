@@ -49,6 +49,7 @@ public class BallonGameActivity extends Activity {
 		sqlEngine.startThead();
 	}
 class BallonHandler extends Handler{
+	@Override
 	public void handleMessage(Message msg){
 		if(msg.what==1){
 			int d=msg.arg1;
