@@ -59,9 +59,13 @@ public class sqlEngThread extends Thread {
 			if (this.recordInstance != null) {
 				this.recordInstance.stop();
 				this.recordInstance.release();
+				this.recordInstance = null;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 }
+
+
+

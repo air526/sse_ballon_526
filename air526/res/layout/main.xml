@@ -3,6 +3,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/show_time"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="hello guys"
+        android:layout_marginRight="1dp"
+        />
 
  <FrameLayout
       android:layout_width="fill_parent"
@@ -15,7 +23,9 @@
           android:layout_height="wrap_content"
           android:id="@+id/imgshow"
           />
-     <Button
+    
+      
+      <Button
          android:id="@+id/btnRestart"
          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -23,6 +33,23 @@
           android:layout_gravity="center"
           android:visibility="invisible"
          />
+      
+      <TextView
+         android:id="@+id/show_end"
+         android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="恭喜您！"
+          android:layout_gravity="right"         
+          android:visibility="invisible"
+          android:textSize="30sp"
+         />
+ 
+     
  </FrameLayout>
+ 
+      
+     
+    
+  
 
 </LinearLayout>
