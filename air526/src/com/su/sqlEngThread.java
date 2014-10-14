@@ -8,10 +8,10 @@ import android.os.Message;
 
 public class sqlEngThread extends Thread {
 	private static final double Po = 2.0E-006D;
-	private static int SAMPLE_RATE_IN_HZ = 8000;
+	private static int SAMPLE_RATE_IN_HZ = 8000;// 44100
 	private boolean bRunning = true;
 	private Handler handle;
-	private AudioRecord recordInstance ;
+	private AudioRecord recordInstance;
 	private int sqlValue = 0;
 
 	public sqlEngThread(Handler ParamHandler) {
@@ -24,7 +24,8 @@ public class sqlEngThread extends Thread {
 				AudioFormat.CHANNEL_CONFIGURATION_MONO,
 				AudioFormat.ENCODING_PCM_16BIT);
 		recordInstance = new AudioRecord(MediaRecorder.AudioSource.MIC,
-				SAMPLE_RATE_IN_HZ, 2, 2, bs);
+				SAMPLE_RATE_IN_HZ, AudioFormat.CHANNEL_CONFIGURATION_MONO,
+				AudioFormat.ENCODING_PCM_16BIT, bs);
 		recordInstance.startRecording();
 		short[] data = new short[bs];
 		long sum = 0;
@@ -36,6 +37,7 @@ public class sqlEngThread extends Thread {
 					sum += data[i] * data[i];
 				}
 				sqlValue = (int) (Math.log10(Math.sqrt(sum / m) / Po)) * 20;
+				// sqlValue = (int) (Math.log10(Math.sqrt(sum / m) )) * 20;
 				Message msg = new Message();
 				msg.what = 1;
 				msg.arg1 = sqlValue;
@@ -66,6 +68,3 @@ public class sqlEngThread extends Thread {
 		}
 	}
 }
-
-
-

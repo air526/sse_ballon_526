@@ -85,6 +85,7 @@ class BallonHandler extends Handler{
 							showend.setText("¹§Ï²Äú£¡");
 							showend.setVisibility(View.VISIBLE);
 							showend.setText("¹§Ï²£¡ ÄúÓÃÁË "+recLen+"Ãë£¡");
+							sqlEngine = null;
 						}
 					}
 					count=0;
